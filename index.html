@@ -1,116 +1,217 @@
-﻿<!DOCTYPE html><!--HTML5 doctype-->
-<html>
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<title>EDC Setlist</title>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta charset="utf-8" />
 
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
 
-<link rel="stylesheet" type="text/css" href="styles/icons.css" /> 
+  <title>EDC</title>
 
-<link rel="stylesheet"  type="text/css" href="themes/jq.ui.css" title="default" />
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
 
-
-<!-- uncomment for AppMobi apps
-<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script> 
-<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script> 	
--->
-
-<script type="text/javascript" charset="utf-8" src="./js/jq.ui.min.js"></script> 
-
-
-<!-- include touch.js on desktop browsers only -->
-<script>
-
-
-if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
-    var script=document.createElement("script");
-    script.src="js/jq.desktopBrowsers.js";
-    var tag=$("head").append(script);
-}
-
-$(document).ready(function(){
-
-});
-
-</script>
-
-
-
-
-<script type="text/javascript">
-    /* This function runs once the page is loaded, but appMobi is not yet active */
-	var webRoot="./";
-	$.ui.autoLaunch=false;
-    $.ui.resetScrollers=false;
-    var init = function(){
-	   $.ui.backButtonText="Back";  
-	   window.setTimeout(function(){$.ui.launch();},1500);
-       $.ui.removeFooterMenu(); // Removes footer
-    };
-    document.addEventListener("DOMContentLoaded",init,false);  
-	$.ui.ready(function(){console.log('ready');});
-   
-    
-	
-    /* This code is used to run as soon as appMobi activates */
-    var onDeviceReady=function(){
-		AppMobi.device.setRotateOrientation("portrait");
-        AppMobi.device.setAutoRotate(false);
-		webRoot=AppMobi.webRoot+"/";
-	    //hide splash screen
-	    AppMobi.device.hideSplashScreen();	
-		
-    };
-    document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
-	
-</script>
-
+  <script src="javascripts/modernizr.foundation.js"></script>
 </head>
 <body>
-    <div id="jQUi">
-        <!-- this is the header div -->
-        <div id="header">
-         <a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='float:right;margin-top:4px' class='menuButton'></a>
-        </div>
-
-        
-        <div id="content">
-            <!-- here is where you can add your panels -->
-            <div title='Welcome' id="main" class="panel" selected="true" >
-            Home
-            </div> 
-            <div title='Day 1-Friday' id="friday" class="panel" selected="true" >
-            Friday
-            </div> 
-
-            <div title='Day 2-Saturday' id="saturday" class="panel" selected="true" >
-            Saturday
-            </div> 
-
-            <div title='Day 3-Sunday' id="sunday" class="panel" selected="true" >
-            Sunday
-            </div> 
-
-        </div>
-
-        <!-- bottom navbar.  Add additional tabs here -->
-        <div id="navbar">
-            <a href="#main" id='navbar_home' class='icon home' >home</a>
-        </div>
-        
-        <!-- this is the default left side nav menu -->
-        <nav>
-            <div class='title'>Home</div>
-                <ul>
-                    <li class="icon home mini"><a href="#main">Home</a></li>
-                    <li class="icon home mini"><a href="#friday">Friday</a></li>
-                    <li class="icon home mini"><a href="#saturday">Saturday</a>
-                    <li class="icon home mini"><a href="#sunday">Sunday</a>
-                    </li>
-                </ul>
-        </nav>
+  
+  <!-- Header and Nav -->
+  
+  <div class="row">
+    <div class="twelve columns">
+      <div class="panel">
+        <h1>Set Times</h1>
+      </div>
     </div>
+  </div>
+  
+  <!-- End Header and Nav -->
+  
+  
+  <div class="row">
+    <dl class="tabs">
+      <dd class="active"><a href="#simple1">Friday</a></dd>
+      <dd><a href="#simple2">Saturday</a></dd>
+      <dd><a href="#simple3">Sunday</a></dd>
+    </dl>
+
+    <ul class="tabs-content">
+      <li class="active" id="simple1Tab">
+    <!-- Main Feed -->
+    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+    <div class="six columns push-three">
+      
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class"twelve columns">
+          <div class="panel">
+            <h2>Friday</h2>
+          </div>
+        </div>
+      </div>
+      <!-- End Feed Entry -->
+      
+      <div class="row">
+        <div class"twelve columns">
+          <div class="ten columns">
+          <div class="dj">Dannic</div>
+        </div>
+        </div>
+      </div>
+      
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="two columns mobile-one"><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="ten columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="link-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Feed Entry -->
+      
+      <hr />
+      
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="two columns mobile-one"><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="ten columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="link-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+          
+          
+          <h6>2 Comments</h6>
+          <div class="row">
+            <div class="two columns mobile-one"><img src="http://placehold.it/50x50&text=[img]" /></div>
+            <div class="ten columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Feed Entry -->
+    </li>
+
+          <li id="simple2Tab">This is simple tab 2's content. Now you see it!</li>
+          <li id="simple3Tab">This is simple tab 3's content. It's, you know...okay.</li>
+        </ul>
+      
+    </div>
+    
+    
+    <!-- Nav Sidebar -->
+    <!-- This is source ordered to be pulled to the left on larger screens -->
+    <div class="three columns pull-six">
+      <div class="panel">
+        <a href="#"><img src="http://placehold.it/300x240&text=[img]" /></a>
+        <h5><a href="#">Your Name</a></h5>
+        
+        <dl class="vertical tabs">
+          <dd><a href="#">Section 1</a></dd>
+          <dd><a href="#">Section 2</a></dd>
+          <dd><a href="#">Section 3</a></dd>
+          <dd><a href="#">Section 4</a></dd>
+          <dd><a href="#">Section 5</a></dd>
+          <dd><a href="#">Section 6</a></dd>
+        </dl>
+        
+      </div>
+    </div>
+    
+    
+    <!-- Right Sidebar -->
+    <!-- On small devices this column is hidden -->
+    <aside class="three columns hide-for-small">
+      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+    </aside>
+    
+  </div>
+    
+  
+  <!-- Footer -->
+  
+  <footer class="row">
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="six columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="six columns">
+          <ul class="link-list right">
+            <li><a href="#">Section 1</a></li>
+            <li><a href="#">Section 2</a></li>
+            <li><a href="#">Section 3</a></li>
+            <li><a href="#">Section 4</a></li>
+            <li><a href="#">Section 5</a></li>
+            <li><a href="#">Section 6</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="javascripts/jquery.js"></script>
+  
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="javascripts/jquery.event.move.js"></script>
+  
+  <script src="javascripts/jquery.event.swipe.js"></script>
+  
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="javascripts/jquery.foundation.orbit.js"></script>
+  
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="javascripts/jquery.placeholder.js"></script>
+  
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  
+  <script src="javascripts/jquery.foundation.joyride.js"></script>
+  
+  <script src="javascripts/jquery.foundation.clearing.js"></script>
+  
+  <script src="javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
 </body>
 </html>
